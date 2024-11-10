@@ -1,0 +1,51 @@
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 300px;
+}
+ul {
+  list-style: none;
+  position: relative;
+  color: #f0f6ff;;
+}
+
+.sidebar-background-image{
+  position: absolute;
+}
+.page-number{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 30px;
+  width: 20px;
+  height: 20px;
+}
+
+.step-details{
+  display: flex;
+  gap: 20px;
+}
+.sidebar{
+  margin-top: 10px;
+}
+.plan-options{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.singlePlan{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 2px solid palegreen;
+  width: 130px;
+  height: 140px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
