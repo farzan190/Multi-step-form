@@ -13,7 +13,11 @@ const Plans=()=>{
      <SinglePlanOption image={AdvancedImg} planName="Advanced" planFees="12$/mo" />    
      <SinglePlanOption image={Pro} planName="Pro" planFees="15$/mo" />    
      </div>
+     <div className='plan-period'>
+        <span>Monthly</span>
+        <span>yearly</span>
 
+     </div>
 
     </div>
 }

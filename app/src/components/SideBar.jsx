@@ -2,14 +2,14 @@
 
 const SideBar=()=>{
     return <div className='sidebar'>
-        <img src={sidebarImg} className='sidebar-background-image'/>
+       
        <ul>
   <li>
     <div className="step-details">
      <div className="page-number">1</div>   
      <div>
    <div className="step-number"> Step 1</div>
-   <div className="step-name">Your info</div>
+   <div className="step-name">Your Info</div>
     </div>
    </div>
    </li>
