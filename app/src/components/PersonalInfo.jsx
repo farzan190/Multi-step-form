@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState ,useContext} from "react";
+import { plansContext } from "./Context";
 
 const PersonalInfo=()=>{
  const[nameEmptyfield,setNameEmptyField]=useState(false);
@@ -7,9 +8,10 @@ const PersonalInfo=()=>{
  const [name,setName]=useState("");
  const [mail,setMail]=useState("");
  const [phone,setPhone]=useState("");
- const [nextStep,setNextStep]=useState(1);
  const [errorMessage,setErrorMessage]=useState("Email is required");
  const [phoneErrorMessage,setPhoneErrorMessage]=useState("phone is required");
+ const{step,setStep}=useContext(plansContext);
+ 
 
  const handleNextStep=()=>{
   if(!name){
@@ -48,7 +50,7 @@ return <div>
        <div className="email">Email Address</div>
        {mailEmptyField&&<div className="error">{errorMessage}</div>}
        </div>
-       <input type="text" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="e.g. scorsesemarty@lorem.com"/>
+       <input type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="e.g. scorsesemarty@lorem.com"/>
 
        <div className="name-error">
        <div className="phone">Phone Number</div>
@@ -56,7 +58,7 @@ return <div>
        </div>
        <input type="number" min={1111111111} max={9999999999} value={phone} onChange={(e)=>setPhone(e.target.value)} placeholder="e.g. +1 234 567 890"/>
         </div>
-        <button onClick={()=>handleNextStep()}>Next Step</button>
+        <button onClick={()=>setStep((step)=>step+1)}>Next Step</button>
         </div>  
 }
 export default PersonalInfo;
