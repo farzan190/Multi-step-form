@@ -15,6 +15,8 @@ main{
    padding-top: 1px;
    padding-right: 90px;
    padding-left: 10px;
+   padding-bottom: 10px;
+
    border-radius: 20px;
 }
 ul {
@@ -35,6 +37,18 @@ ul {
   border-radius: 30px;
   width: 30px;
   height: 30px;
+}
+.page-number-active{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  background-color: #bfe2fd;
+  color: #02295a;
+
 }
 
 .step-details{
@@ -133,10 +147,8 @@ label{
   letter-spacing: 1.1px;
   margin-top: 6px;
 }
-.step-number{
-  font-size: small;
-  font-weight: 100;
-}
+
+
 .board{
   display: flex;
   justify-content: center;
@@ -354,4 +366,16 @@ p{
   color: #473dff;
   font-size: 1.35rem;
   font-weight: 600;
+}
+.thanksNote{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.Thanks{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #02295a;
+  align-items: center;
 }
