@@ -1,6 +1,5 @@
 import { useContext,useState ,useEffect} from "react";
 import { plansContext } from "./Context";
-import { tr } from "framer-motion/m";
 
 const AddonOption=({id,title,detail,price,isSelected})=>{
    
