@@ -6,6 +6,7 @@ import Plans from './components/Plans';
 import Addons from './components/Add-ons';
 import Toggle from './components/Toggle.jsx';
 import { plansContext } from './components/Context.jsx';
+import Summary from './components/Summary.jsx';
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
      {step==1&&<PersonalInfo setStep={setStep}/>}
      {step==2&&<Plans setStep={setStep}/>}
      {step==3&&<Addons setStep={setStep}/>}
+     {step==4&&<Summary />}
+
      </div>
     
     </div>

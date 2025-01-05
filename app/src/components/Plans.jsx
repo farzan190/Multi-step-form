@@ -7,10 +7,8 @@ import Toggle from './Toggle';
 import { plansContext } from './Context';
 
 const Plans=()=>{
-    const[arcade,setArcade]=useState(false);
-    const [advanced,setAdvanced]=useState(false);
-    const [pro,setPro]=useState(false);
-    const{step,setStep}=useContext(plansContext);
+   
+    const{step,setStep,arcade,setArcade,advanced,setAdvanced,pro,setPro}=useContext(plansContext);
 
     const handlePlanSelection=(selectedPlan)=>{
                if(selectedPlan==="arcade"){
@@ -42,7 +40,12 @@ const Plans=()=>{
      </div>
     
      {<div className='billing-period'>Monthly<Toggle/>Yearly</div>}
-     <button onClick={()=>setStep((step)=>step+1)}>Next Step</button>
+     <div className='button-section'>
+     <button className="Go-Back" onClick={()=>setStep((step)=>step-1)}>Go Back</button>
+      
+      <button className="nextStep" onClick={()=>setStep((step)=>step+1)}>Next Step</button>
+      
+      </div>
     </div>
 
     

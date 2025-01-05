@@ -7,11 +7,11 @@ const SinglePlanOption=({image,planName,planFees,isSelected})=>{
     
         return <div className={isSelected?"singlePlan-selected":"singlePlan"}>
             <img src={image}/>
-            <div><div>{planName}</div>
-            <div>{planFees}</div>
-            <div>{isChecked?"2 months free":""}</div>
+            <div><div className="planTitle">{planName}</div>
+            <div className="planCharge">{isChecked?Number(planFees.match(/\d+/)*10):planFees}$</div>
+            <div className="">{isChecked?"2 months free":""}</div>
 
             </div>
-         </div>
+         </div> 
 }
 export default SinglePlanOption;

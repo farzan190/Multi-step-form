@@ -15,10 +15,15 @@ const PersonalInfo=()=>{
 
  const handleNextStep=()=>{
   if(!name){
-   setNameEmptyField(true);
+    setNameEmptyField(true);
+  }else{
+    setNameEmptyField(false);
   }
   if(!mail){
     setMailEmptyField(true);
+  }
+  else{
+    setMailEmptyField(false);
   }
   if (mail && (!mail.includes("@") || !mail.includes(".com"))) {
         setMailEmptyField(true);
@@ -27,16 +32,22 @@ const PersonalInfo=()=>{
  if(!phone){
   setEmptyPhone(true);
  }
+ else{
+  setEmptyPhone(false);
+
+ }
  if(phone&&phone.length!==10)
  { setPhoneErrorMessage("invalid phone number")
   setEmptyPhone(true);
-
  }
-
+ if(name && mail&&   (mail.includes("@") && mail.includes(".com"))&&   phone&&phone.length==10){
+  setStep((step)=>step+1);}
  }
   
+  
+ 
 return <div>
-       <h1> Personal Info</h1>
+       <div className="headingPersonalInfo"> Personal Info</div>
        <p>Please provide your name, email address, and phone number.</p>
        <div className="form-details">
 
@@ -44,21 +55,21 @@ return <div>
        <div className="name">Name</div>
        {nameEmptyfield&&<div className="error" >Name is required</div>}
        </div>
-       <input type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder="e.g. Martin Scorsese"/>
+       <input type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder="e.g. Martin Scorsese" className="personalinfo-input"/>
         
         <div className="name-error">
        <div className="email">Email Address</div>
        {mailEmptyField&&<div className="error">{errorMessage}</div>}
        </div>
-       <input type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="e.g. scorsesemarty@lorem.com"/>
+       <input type="email" value={mail} onChange={(e)=>setMail(e.target.value)} placeholder="e.g. scorsesemarty@lorem.com" className="personalinfo-input"/>
 
        <div className="name-error">
        <div className="phone">Phone Number</div>
        {emptyPhone&&<div className="error">{phoneErrorMessage}</div>}
        </div>
-       <input type="number" min={1111111111} max={9999999999} value={phone} onChange={(e)=>setPhone(e.target.value)} placeholder="e.g. +1 234 567 890"/>
+       <input type="number" min={1111111111} max={9999999999} value={phone} onChange={(e)=>setPhone(e.target.value)} placeholder="e.g. +1 234 567 890" className="personalinfo-input"/>
         </div>
-        <button onClick={()=>setStep((step)=>step+1)}>Next Step</button>
+        <div className="nextButtonSection"> <button onClick={()=>handleNextStep()} className="nextStep">Next Step</button></div>
         </div>  
 }
 export default PersonalInfo;
